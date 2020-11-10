@@ -12,7 +12,6 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(express.static("public"));
 
-//TODO
 mongoose.connect("mongodb://localhost:27017/wikidb");
 const articleschema=mongoose.Schema({
     title: String,
@@ -35,7 +34,7 @@ app.post("/articles",function(req,res)
      content: req.body.content
  });
  newarticle.save();
- res.send("bhak bsdk!!");
+ res.send("saved successfully");
 });
 app.delete("/articles",function(req,res)
 {
